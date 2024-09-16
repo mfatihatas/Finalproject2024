@@ -6,7 +6,7 @@ on:
       - staging
 
 jobs:
-  run-test:
+  run-tests:
     runs-on: unbuntu-latest
 
     steps:
