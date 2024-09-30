@@ -1,4 +1,5 @@
 name: CI Pipeline for Staging
+
 on: 
   push:
     branches:
@@ -6,7 +7,7 @@ on:
 
 jobs:
   run-tests:
-    runs-on: ubuntu-latest  # Fixed typo here
+    runs-on: macos-latest  # Change from ubuntu-latest to macos-latest
 
     steps:
       - name: Checkout repository
@@ -26,7 +27,7 @@ jobs:
             pip install -r backend-server/requirements.txt
           fi
 
-      - name: Run tests  # Fixed indentation here
+      - name: Run tests
         run: |
           cd backend-server
           python -m unittest discover -s tests
