@@ -1,5 +1,4 @@
-name: CI Pipeline for Staging Branch
-
+name: firstworkflow
 on: 
   push:
     branches:
