@@ -2,7 +2,7 @@ name: firstworkflow
 on: 
   push:
     branches:
-      - staging
+      - main
 
 jobs:
   run-tests:
