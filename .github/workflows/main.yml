@@ -1,4 +1,4 @@
-name: CI Pipeline for Staging
+name: CI Pipeline for Staging Branch
 
 on: 
   push:
@@ -7,27 +7,30 @@ on:
 
 jobs:
   run-tests:
-    runs-on: macos-latest  # Change from ubuntu-latest to macos-latest
-
+    runs-on: macos-latest  
     steps:
-      - name: Checkout repository
+     
+      - name: Checkout Repository
         uses: actions/checkout@v3
 
+    
       - name: Set up Python
         uses: actions/setup-python@v4
         with: 
-          python-version: '3.x'
+          python-version: '3.x'  
 
+   
       - name: Upgrade pip
         run: python -m pip install --upgrade pip
 
+    
       - name: Install dependencies
         run: |
           if [ -f backend-server/requirements.txt ]; then
             pip install -r backend-server/requirements.txt
           fi
 
-      - name: Run tests
+      - name: Run Tests
         run: |
           cd backend-server
           python -m unittest discover -s tests
